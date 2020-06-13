@@ -3,13 +3,27 @@ version: "2"
 services:
 
   steedos:
-    build: .
-    #restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
-      - "5040:5040"
+      - 5040:5040
+      - 7070:7070
     volumes:
       - /srv/workflow/cfs:/storage
       - /srv/git/steedos-contracts-app/src:/app/src
       - /srv/git/steedos-contracts-app/steedos-config.yml:/app/steedos-config.yml
       - /srv/git/steedos-contracts-app/.env.local:/app/.env.local
 
+  mongodb_container:
+    image: mongo:latest
+    environment:
+      #MONGO_INITDB_ROOT_USERNAME: root
+      #MONGO_INITDB_ROOT_PASSWORD: rootpassword
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb_data_container:/data/db
+
+volumes:
+  mongodb_data_container:
