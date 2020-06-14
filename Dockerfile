@@ -4,6 +4,8 @@ ADD . /app
 
 WORKDIR /app
 
+RUN apt-get install build-essential g++
+
 RUN npm cache clean -f 
 
 RUN npm install n -g
