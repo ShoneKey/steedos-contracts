@@ -24,3 +24,6 @@ services:
       # - /srv/git/steedos-contracts-app/.env.local:/app/.env.local
     depends_on:
       - mongodb_container
+    
+  volumes:
+      - mongodb_data_container
