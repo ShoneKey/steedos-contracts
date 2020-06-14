@@ -4,6 +4,12 @@ ADD . /app
 
 WORKDIR /app
 
+RUN sudo npm cache clean -f 
+
+RUN sudo npm install n -g
+
+RUN sudo n stable
+
 RUN npm config set registry http://registry.npm.taobao.org/
 
 RUN npm i yarn -g
