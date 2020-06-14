@@ -22,6 +22,5 @@ services:
       - /srv/git/steedos-contracts-app/src:/app/src
       # - /srv/git/steedos-contracts-app/steedos-config.yml:/app/steedos-config.yml
       # - /srv/git/steedos-contracts-app/.env.local:/app/.env.local
-
-volumes:
-  mongodb_data_container:
+    depends_on:
+      -mongodb_container
