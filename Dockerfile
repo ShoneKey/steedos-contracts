@@ -4,6 +4,10 @@ ADD . /app
 
 WORKDIR /app
 
+RUN cat apt-sources.list > /etc/apt/sources.list
+
+RUN apt-get update
+
 RUN apt-get install -y build-essential g++
 
 RUN npm cache clean -f 
