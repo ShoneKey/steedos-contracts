@@ -5,8 +5,8 @@ ADD . /app
 WORKDIR /app
 
 RUN cat apt-sources.list > /etc/apt/sources.list \
-&& apt-get update \
-&& apt-get install -y build-essential g++ 
+&& apt-get update 
+RUN apt-get install -y build-essential g++ 
 RUN npm config set registry http://registry.npm.taobao.org/ \
 && npm cache clean -f \
 && npm install n -g 
