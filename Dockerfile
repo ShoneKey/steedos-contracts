@@ -4,26 +4,26 @@ ADD . /app
 
 WORKDIR /app
 
-RUN cat apt-sources.list > /etc/apt/sources.list
+RUN cat apt-sources.list > /etc/apt/sources.list \
 
-RUN apt-get update
+&& apt-get update \
 
-RUN apt-get install -y build-essential g++
+&& apt-get install -y build-essential g++ \
 
-RUN npm cache clean -f 
+&& npm cache clean -f \
 
-RUN npm install n -g
+&& npm install n -g \
 
-RUN n stable
+&& n stable \
 
-RUN npm config set registry http://registry.npm.taobao.org/
+&& npm config set registry http://registry.npm.taobao.org/ \
 
-RUN npm i yarn -g
+&& npm i yarn -g \
 
-RUN npm install -g typescript
+&& npm install -g typescript \
 
-RUN yarn config set registry http://registry.npm.taobao.org/
+&& yarn config set registry http://registry.npm.taobao.org/ \
 
-RUN yarn --force
+&& yarn --force \
 
-RUN yarn start
+&& yarn start
