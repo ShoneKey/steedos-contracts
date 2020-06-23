@@ -6,13 +6,13 @@ WORKDIR /app
 
 RUN cat apt-sources.list > /etc/apt/sources.list \
 && apt-get update \
-&& apt-get install -y build-essential g++ \
+&& apt-get install -y build-essential g++ 
+RUN npm config set registry http://registry.npm.taobao.org/ \
 && npm cache clean -f \
-&& npm install n -g \
-&& n stable \
-&& npm config set registry http://registry.npm.taobao.org/ \
-&& npm i yarn -g \
-&& npm install -g typescript \
-&& yarn config set registry http://registry.npm.taobao.org/ \
+&& npm install n -g 
+RUN n stable 
+RUN npm i yarn -g \
+&& npm install -g typescript 
+RUN yarn config set registry http://registry.npm.taobao.org/ \
 && yarn --force 
 CMD yarn start
