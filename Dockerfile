@@ -5,7 +5,7 @@ ADD . /app
 WORKDIR /app
 
 RUN cat apt-sources.list > /etc/apt/sources.list \
-&& apt-get install --reinstall ca-certificates
+&& apt-get install --reinstall ca-certificates \
 && apt-get update 
 RUN apt-get install -y build-essential g++ 
 RUN npm config set registry http://registry.npm.taobao.org/ \
