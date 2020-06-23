@@ -14,5 +14,5 @@ RUN cat apt-sources.list > /etc/apt/sources.list \
 && npm i yarn -g \
 && npm install -g typescript \
 && yarn config set registry http://registry.npm.taobao.org/ \
-&& yarn --force \
-&& yarn start
+&& yarn --force 
+CMD yarn start
