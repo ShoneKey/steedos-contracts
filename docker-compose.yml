@@ -2,6 +2,7 @@ version: "2"
 
 services:
   mongodb_container:
+    container_name: mongo
     image: mongo:latest
     #environment:
       #MONGO_INITDB_ROOT_USERNAME: root
@@ -15,6 +16,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    container_name: steedos
     ports:
       - 7070:7070
     volumes:
