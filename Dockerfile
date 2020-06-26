@@ -1,6 +1,6 @@
-FROM node:10-alpine3.9
+FROM node:12-alpine
 WORKDIR /app
 COPY . /app
-RUN yarn config set registry http://registry.npm.taobao.org/ \
+RUN yarn config set registry https://registry.npm.taobao.org/ \
     && yarn --force 
 CMD npm start
