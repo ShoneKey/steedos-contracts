@@ -5,6 +5,7 @@ ADD . /app
 WORKDIR /app
 
 RUN cat apt-sources.list > /etc/apt/sources.list \
+    && cat /etc/issue \
     && git config --global http.sslverify false \
     && apt-get update \
     && apt-get install -y build-essential g++ \
