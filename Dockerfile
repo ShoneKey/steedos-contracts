@@ -6,8 +6,6 @@ FROM node:12-alpine
 WORKDIR /app
 COPY . /app
 RUN cat /etc/issue \
-    && apt-get install -y python \
-    && apt-get install -y python \
     && yarn config set registry https://registry.npm.taobao.org/ \
     && export NODE_TLS_REJECT_UNAUTHORIZED=0 \
     && yarn config set "strict-ssl" false \
