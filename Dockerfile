@@ -8,5 +8,5 @@ RUN cat /etc/issue \
     && yarn config set registry https://registry.npm.taobao.org/ \
     && export NODE_TLS_REJECT_UNAUTHORIZED=0 \
     && yarn config set "strict-ssl" false \
-    && yarn install
+    && yarn install --python="/usr/bin/python"
 CMD yarn start
