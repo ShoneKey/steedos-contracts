@@ -15,7 +15,7 @@ services:
   steedos:
     build:
       context: .
-      dockerfile: Dockerfile-Origin
+      dockerfile: Dockerfile
     container_name: steedos
     ports:
       - 7070:7070
