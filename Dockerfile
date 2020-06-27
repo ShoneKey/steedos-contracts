@@ -6,7 +6,7 @@ COPY --from=0 /usr/bin/python3.5 /usr/bin/python3.5m /usr/bin/python /usr/bin/py
 WORKDIR /app
 COPY . /app
 RUN export PATH=/usr/bin/python:$PATH \
-    npm config set python "/usr/bin/python" \
+    && npm config set python "/usr/bin/python" \
     && yarn config set registry https://registry.npm.taobao.org/ \
     && export NODE_TLS_REJECT_UNAUTHORIZED=0 \
     && yarn config set "strict-ssl" false \
