@@ -19,7 +19,7 @@ services:
     container_name: steedos
     ports:
       - 7070:7070
-    volumes:
+    # volumes:
       # - /srv/workflow/cfs:/storage
       # - /srv/git/steedos-contracts-app/src:/app/src
       # - /srv/git/steedos-contracts-app/steedos-config.yml:/app/steedos-config.yml
