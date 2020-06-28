@@ -1,7 +1,7 @@
 FROM python:3.6
 
-RUN wget https://nodejs.org/dist/v10.16.0/node-v10.16.0-linux-x64.tar.xz \
-    && tar xf node-v10.16.0-linux-x64.tar.xz -C /opt/
+RUN wget https://nodejs.org/dist/v12.14.1/node-v12.14.1-linux-x64.tar.xz \
+    && tar xf node-v12.14.1-linux-x64.tar.xz -C /opt/
 
 ENV PATH=$PATH:/opt/node-v10.16.0-linux-x64/bin
 
