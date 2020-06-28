@@ -1,10 +1,7 @@
 FROM python:3.6
-
 RUN wget https://nodejs.org/dist/v12.14.1/node-v12.14.1-linux-x64.tar.xz \
     && tar xf node-v12.14.1-linux-x64.tar.xz -C /opt/
-
-ENV PATH=$PATH:/opt/node-v10.16.0-linux-x64/bin
-
+ENV PATH=$PATH:/opt/node-v12.14.1-linux-x64/bin
 WORKDIR /app
 COPY . /app
 RUN npm config set registry http://registry.npm.taobao.org/ \
