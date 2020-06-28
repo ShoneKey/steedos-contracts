@@ -1,4 +1,4 @@
-version: "2"
+version: "3"
 
 services:
   mongodb_container:
@@ -19,8 +19,7 @@ services:
     container_name: steedos
     ports:
       - 7070:7070
-    volumes:
-      - /data/steedos:/app
+    # volumes:
       # - /srv/workflow/cfs:/storage
       # - /srv/git/steedos-contracts-app/src:/app/src
       # - /srv/git/steedos-contracts-app/steedos-config.yml:/app/steedos-config.yml
